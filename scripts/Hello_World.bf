@@ -1,3 +1,5 @@
+Output mode: ASCII
+
 This program prints "Hello World!" on screen
 
 +++++ +++++             initialize counter (cell #0) to 10

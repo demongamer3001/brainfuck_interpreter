@@ -1,6 +1,8 @@
 import keyboard, sys, os
 from time import sleep
 
+
+tape_size = 8
 file_name = "code.bf"
 
 try:
@@ -8,24 +10,23 @@ try:
 except:
     pass
 
-
+program_pointer = 0
+pointer = 0
+tape = []
+loop_stack = []
+output_ascii = False
 file_name = "./scripts/" + file_name
 
 script = ""
 with open(file_name, "r") as f:
+    if "ASCII" in f.readlines()[0]:
+        ascii = True
+    
     for _ in f.read():
         if _ in "<>+-.,[]":
             script += _
     script_length = len(script)
 
-program_pointer = 0
-pointer = 0
-tape = []
-loop_stack = []
-
-
-output_ascii = True
-tape_size = 8
 
 for _ in range(tape_size):
     tape.append(0)

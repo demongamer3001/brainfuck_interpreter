@@ -1,5 +1,6 @@
-import keyboard, sys, os
+import sys, os
 from time import sleep
+os.chdir("scripts")
 
 
 tape_size = 8
@@ -15,14 +16,14 @@ pointer = 0
 tape = []
 loop_stack = []
 output_ascii = False
-file_name = "./scripts/" + file_name
 
 script = ""
 with open(file_name, "r") as f:
-    if "ASCII" in f.readlines()[0]:
-        ascii = True
+    content = f.read()
+    if "ASCII" in content.split("\n")[0]:
+        output_ascii = True
     
-    for _ in f.read():
+    for _ in content:
         if _ in "<>+-.,[]":
             script += _
     script_length = len(script)
@@ -54,10 +55,9 @@ while True:
             sys.stdout.flush()
         else:
             print(tape[pointer])
-        sleep(0.05)
+        sleep(0.001)
     elif _ == ",":
-        tape[pointer] = ord(keyboard.read_key()) # Wait until a key is pressed
-        print() # Make a newline
+        tape[pointer] = ord(input()[0])
     
     elif _ == "[":
         loop_stack.append(program_pointer + 1)

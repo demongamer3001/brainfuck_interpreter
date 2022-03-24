@@ -1,4 +1,20 @@
 Output mode: ASCII
 
-+++++
-[-> +++++ +++++ <]>--. Prints 0
++++ +++
+[-> +++++ +++++ <]>--.
+[-]<
+
++++
+[-> +++++ +++++ <]>++.
+[-]<
+
+
+
+, Gets a character(number)
++ Adds one to it
+
+>
++++++ +++++.
+<
+
+. Prints it

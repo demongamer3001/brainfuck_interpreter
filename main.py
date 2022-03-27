@@ -1,7 +1,7 @@
 import sys, os
 from time import sleep
 
-tape_size = 8
+tape_size = 1024
 file_name = "code.bf"
 
 try:

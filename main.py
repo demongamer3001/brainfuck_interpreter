@@ -1,7 +1,5 @@
 import sys, os
 from time import sleep
-os.chdir("scripts")
-
 
 tape_size = 8
 file_name = "code.bf"
